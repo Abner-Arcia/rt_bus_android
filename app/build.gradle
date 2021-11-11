@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+def appPropertiesFile = rootProject.file("app.properties")
+def appProperties = new Properties()
+appProperties.load(new FileInputStream(appPropertiesFile))
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "arcia.abner.rt_bus"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_URL", '"https://rt-bus-app-service.azurewebsites.net/rt-bus/api/"'
+        buildConfigField "String", "AZURE_MAPS_SUBSCRIPTION_KEY", appProperties["AZURE_MAPS_SUBSCRIPTION_KEY"]
+        buildConfigField "String", "WEB_PUBSUB_CONNECTION_STRING", appProperties["WEB_PUBSUB_CONNECTION_STRING"]
+        buildConfigField "String", "WEB_PUBSUB_HUB_NAME", appProperties["WEB_PUBSUB_HUB_NAME"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // Fragment KTX
+    implementation "androidx.fragment:fragment-ktx:${fragmentKtxVersion}"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    // Azure Maps
+    implementation "com.azure.android:azure-maps-control:${azureMapsVersion}"
+    // Azure Web PubSub
+    implementation "com.azure:azure-messaging-webpubsub:${azureWebPubSubVersion}"
+    // WebSocket
+    implementation "org.java-websocket:Java-WebSocket:${webSocketVersion}"
+    // Google Play Services
+    implementation "com.google.android.gms:play-services-location:${googlePlayServicesVersion}"
+}

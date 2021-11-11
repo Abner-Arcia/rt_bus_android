@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RT-Bus</string>
+    <string name="routes">Rutas</string>
+    <string name="explore_routes">Explora las rutas de los autobuses y decide cuál es el más
+        apropiado para ti</string>
+    <string name="view_routes">Ver rutas</string>
+    <string name="an_error_ocurred">Ocurrió un error</string>
+    <string name="simulate_bus">Simular autobus</string>
+    <string name="start_sending_location">Iniciar el envío de ubicación</string>
+</resources>

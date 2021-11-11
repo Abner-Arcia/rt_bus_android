@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/abner/Documents/Estudio/RT-Bus/rt_bus_android/app/src/main/res/drawable/border.xml" value="0.2203125" />
+        <entry key="..\:/Users/abner/Documents/Estudio/RT-Bus/rt_bus_android/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/abner/Documents/Estudio/RT-Bus/rt_bus_android/app/src/main/res/layout/activity_route_map.xml" value="0.15" />
+        <entry key="..\:/Users/abner/Documents/Estudio/RT-Bus/rt_bus_android/app/src/main/res/layout/activity_routes.xml" value="0.292259083728278" />
+        <entry key="..\:/Users/abner/Documents/Estudio/RT-Bus/rt_bus_android/app/src/main/res/layout/activity_simulate_bus.xml" value="0.33" />
+        <entry key="..\:/Users/abner/Documents/Estudio/RT-Bus/rt_bus_android/app/src/main/res/layout/list_item.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
